@@ -1,13 +1,13 @@
-package com.notekeeping.notekeeping;
+package com.notekeeping_auth.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NotekeepingApplication {
+public class AuthApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NotekeepingApplication.class, args);
+		SpringApplication.run(AuthApplication.class, args);
 	}
 
 }

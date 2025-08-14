@@ -1,10 +1,10 @@
-package com.notekeeping.notekeeping;
+package com.notekeeping_auth.auth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NotekeepingApplicationTests {
+class AuthApplicationTests {
 
 	@Test
 	void contextLoads() {

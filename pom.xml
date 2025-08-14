@@ -8,10 +8,10 @@
 		<version>3.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.notekeeping</groupId>
-	<artifactId>notekeeping</artifactId>
+	<groupId>com.notekeeping-auth</groupId>
+	<artifactId>auth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>notekeeping</name>
+	<name>auth</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
