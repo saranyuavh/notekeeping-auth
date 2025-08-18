@@ -3,6 +3,8 @@ package com.notekeeping_auth.auth.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "users") // avoid reserved keyword 'user'
 @Data                   // generates getters, setters, equals, hashCode, toString
@@ -14,7 +16,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // CockroachDB identity
     @Column(name = "id")
-    private Long id;
+    private UUID id;
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
