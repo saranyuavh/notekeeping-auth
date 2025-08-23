@@ -20,8 +20,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class ApplicationSecurityConfig {
     /**
      * TODO:
-     * 1. Password Encoder
-     * 2. related filter chains
      * 3. JWT Configuration
      * 4. token management
      */
