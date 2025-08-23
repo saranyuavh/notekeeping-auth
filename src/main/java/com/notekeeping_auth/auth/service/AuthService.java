@@ -6,6 +6,8 @@ import com.notekeeping_auth.auth.dto.SignupResponse;
 import com.notekeeping_auth.auth.entity.User;
 import com.notekeeping_auth.auth.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -14,9 +16,11 @@ import java.util.Optional;
 public class AuthService {
     UserRepository userRepository;
 
+    PasswordEncoder passwordEncoder;
     @Autowired
-    void setUserRepository(UserRepository userRepository){
+    void setUserRepository(UserRepository userRepository, PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -27,12 +31,12 @@ public class AuthService {
         }
 
         if(userRepository.existsByUsername(signupRequest.getUsername())) {
-            throw new AuthException("User with Username "+signupRequest.getEmail()+" Already Exists");
+            throw new AuthException("User with Username "+signupRequest.getUsername()+" Already Exists");
         }
 
         SignupResponse response;
         try {
-            String encryptedPassword = signupRequest.getPassword();
+            String encryptedPassword = passwordEncoder.encode(signupRequest.getPassword());
 
             User user = new User().builder()
                     .email(signupRequest.getEmail())

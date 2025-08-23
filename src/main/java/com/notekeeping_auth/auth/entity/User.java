@@ -11,12 +11,14 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder                 // allows User.builder().username(...).build()
+@Getter
+@Setter
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // CockroachDB identity
     @Column(name = "id")
-    private UUID id;
+    private long id;
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
