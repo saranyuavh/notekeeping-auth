@@ -6,11 +6,9 @@ import com.notekeeping_auth.auth.dto.SignupResponse;
 import com.notekeeping_auth.auth.entity.User;
 import com.notekeeping_auth.auth.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class AuthService {
